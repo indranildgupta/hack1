@@ -1,0 +1,19 @@
+Question:
+You are given n activities with their start and finish times. Select the maximum number of activities that can be performed by a single person,
+assuming that a person can only work on a single activity at a time.
+
+Solution (In python):
+s=list(map(int,input().split()))
+f=list(map(int,input().split()))
+n = len(f)
+# The first activity is always selected
+i = 0
+print(i)
+# Consider rest of the activities
+for j in range(n):
+    # If this activity has start time greater than
+    # or equal to the finish time of previously
+    # selected activity, then select it
+    if s[j] >= f[i]:
+        print(j)
+        i=j
